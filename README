@@ -1,0 +1,16 @@
+通用编程标记语言 - General Programming Markup Language
+
+通用编程标记语言(General Programming Markup Language)简称GPML，
+它是由暴雨实验室&dscn.us联合出品、一款解释性编程语言。与其他编程语言不同的是，
+GPML源代码是”形式良好“的XML文档，它是有作为的XML，可以执行的XML。
+虽然XML是不作为的，XML 被设计用来结构化、存储以及传输信息，
+但是GPML打破了这一点，它使XML活动起来了，使每个XML标签有了动作。
+
+项目发起人
+
+傅宣登 http://t.qq.com/Abreto
+张嘉承 http://t.qq.com/Oran_z
+
+Github仓库地址: https://github.com/gpml
+http://www.hard-rain.org/product/gpml
+http://gpml.dscn.us
