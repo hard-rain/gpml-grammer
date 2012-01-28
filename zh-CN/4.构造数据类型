@@ -11,7 +11,9 @@
 
 	<数组 名="数组名" 类型="元素数据类型"[ 大小="常量表达式"][ 初="值1,值2,...,值n"] />
 或	<array name="Array Name" type="Element Data Type" size="Constant Expression"[ default="value 1,value 2,...,value n"] />
-或	<变量 名="数组名" 类型="元素数据类型[大小]"[ 初="值1,值2,...,值n"] /> <!-- 一个数组的类型为 数组元素类型* -->
+或	<变量 名="数组名" 类型="元素数据类型[大小]"[ 初="值1,值2,...,值n"] /> <!-- 一个数组的类型为 数组元素类型[] (如int[]) -->
+或	<变量 名="[大小]数组名" 类型="元素数据类型"[ 初="值1,值2,...,值n"] />
+或	<变量 名="数组名[大小]" 类型="元素数据类型"[ 初="值1,值2,...,值n"] />
 
 特别的，对于字符数组(字符串)
 	<数组 名="字符串名" 类型="字符" 大小="字符串长度"[ 初="初始字符串"] />
@@ -52,32 +54,33 @@
 
 	则有
 
-	<mov f="星期五" t="今天" />	<!-- 合法,今天值为5 -->
-	<mov f="今天" t="明天" />	<!-- 合法,明天值为5 -->
-	<var 名="n" 类型="整型" 值="今天" /> 	<1-- 合法,n值为5 -->
-	<mov f="3" t="明天" />		<!-- 不合法,不能直接赋整数值 -->
+	<mov f="星期五" t="$今天" />	<!-- 合法,今天值为5 -->
+	<mov f="$今天" t="$明天" />	<!-- 合法,明天值为5 -->
+	<var 名="n" 类型="整型" 值="$今天" /> 	<1-- 合法,n值为5 -->
+	<mov f="3" t="$明天" />		<!-- 不合法,不能直接赋整数值 -->
 
 4.3 结构体类型
 	(关于什么是结构体，请参见C语言教程对结构体的描述)
 	在GPML中，结构体类型和结构体变量的声明格式如下：
 
 	<结构 名="结构体名">
-		<变量 名="成员1" 类型="成员1类型"[ 值="初值1"][ 静态][ 无符号] />
-		<变量 名="成员2" 类型="成员2类型"[ 值="初值2"][ 静态][ 无符号] />
+		<变量 名="成员1" 类型="成员1类型"[ 值="初值1"][ 附加=".."] />
+		<变量 名="成员2" 类型="成员2类型"[ 值="初值2"][ 附加=".."] />
 		...
-		<变量 名="成员n" 类型="成员n类型"[ 值="初值n"][ 静态][ 无符号] />
+		<变量 名="成员n" 类型="成员n类型"[ 值="初值n"][ 附加=".."] />
 	</结构>
 或
 	<struct name="Struct Name">
-		<var name="Member 1" type="The type of Member 1"[ value="Default Value Expression 1"][ static][ unsigned] />
-		<var name="Member 2" type="The type of Member 2"[ value="Default Value Expression 2"][ static][ unsigned] />
+		<var name="Member 1" type="The type of Member 1"[ value="Default Value Expression 1"][ ap=".."] />
+		<var name="Member 2" type="The type of Member 2"[ value="Default Value Expression 2"][ ap=".."] />
 		...
-		<var name="Member n" type="The type of Member n"[ value="Default Value Expression n"][ static][ unsigned] />
+		<var name="Member n" type="The type of Member n"[ value="Default Value Expression n"][ ap=".."] />
 	</struct>
 
 	可以像使用系统欲定义数据类型一样定义结构体类型变量：
 
 	<变量 名="变量名" 类型="结构体名"[ 值="{成员1初始值,成员2初始值,..,成员N初始值}"] />
 	
-	使用方法, 变量名.成员名 即可，加不加美元符号跟普通变量规则一样，成员名始终不用加美元符号。
+	初值一定要与定义成员时的顺序一样。
+	使用方法, $变量名.成员名 即可，加不加美元符号跟普通变量规则一样，成员名始终不用加美元符号。
 
