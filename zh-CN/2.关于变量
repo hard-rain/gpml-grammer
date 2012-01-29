@@ -12,12 +12,12 @@
 
 一般声明变量的语法为：
 
-	<变量 名="<变量名>" 类型="<变量类型>" 值="<初值表达式>"[ 附加="附加属性1|附加属性2|..|附加属性n"] />
+	<变量 名="<变量名>" 类型="<变量类型>" 值="<初值表达式>"[ 附加="附加属性1,附加属性2,..,附加属性n"] />
 或
 	<var name="<var name>" type="<var type>" value="<default value expression>"[ ap=".."] />
 
 
-	附加属性可选有: 常(const), 无符号(unsigned), 静态(static)等，适用于不同的场所，用'|'分割。
+	附加属性可选有: 常(const), 无符号(unsigned), 静(static), 外部(extern)等，适用于不同的场所，用','分割。
 
 二、赋值
 
@@ -27,9 +27,6 @@
 或
 	<mov f="<right operand expression>" t="<left operand>" />
 
-或使用以下等价形式
-	<执行 代码="<左操作数> = <右操作数>;" />
-	<exe code="<left operand> = <right operand>;" />
 
 三、使用
 
